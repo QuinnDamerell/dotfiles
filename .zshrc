@@ -109,7 +109,7 @@ dotf-pull () {
 dotf-push () {
    ~/repos/dotfiles/write.sh
 }
-dotf-s () {
+dotf-status () {
    cd ~/repos/dotfiles/
    git status
 }
