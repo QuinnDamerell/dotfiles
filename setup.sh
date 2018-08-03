@@ -10,6 +10,11 @@ check_for_err() {
 }
 
 install_program () {
+   if hash $1 2>/dev/null; then
+        echo "$1 is already installed"
+	return 1
+   fi
+
    if hash apt 2>/dev/null; then
         sudo apt-get install $1 -y 1>/dev/null
    else
@@ -17,16 +22,21 @@ install_program () {
    fi
 
    check_for_err "Installing $1"
+   return 0
 }
 
 install_omzsh() { 
-   install_program "zsh"
+   install_program "zsh"   
    rm -fdr ~/.oh-my-zsh/
    check_for_err "Removing zsh repo"
    git clone --quiet https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh >/dev/null   
    check_for_err "Cloning omzsh"
-   chsh -s /bin/zsh
-   check_for_err "Setting zsh as default" 
+  
+   TEST_CURRENT_SHELL=$(expr "$SHELL" : '.*/\(.*\)')
+   if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then   
+      chsh -s /bin/zsh
+      check_for_err "Setting zsh as default" 
+   fi
 }
 
 setup_vim() {
