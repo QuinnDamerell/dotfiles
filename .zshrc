@@ -60,7 +60,7 @@ plugins=(git systemd tmux)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-ZSH_THEME="juanghurtado"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -97,17 +97,19 @@ alias rac='ssh -oForwardAgent=yes qdamere@raccoons.mixer.com'
 
 ## Personal Stuff
 
+## ET go home
+cd ~
+
 ## Directories
 alias dr='cd ~/repos'
-
-## Load SSH keys if needed
-#eval `ssh-agent`
-#ssh-add
+alias dotf='cd ~/repos/dotfiles'
+alias dotf-pull='~/repos/dotfiles/update.sh'
+alias dotf-push='~/repos/dotfiles/write.sh'
 
 ## Tmux stuff.
 alias tm='tmux a -t quinn'
 alias tmn='tmux -2 new -s quinn'
-alias tmk='tmux kill-session -s quinn'
+alias tmk='tmux kill-session -t quinn'
 
 ## JournalCtl Helpers
 jc () {

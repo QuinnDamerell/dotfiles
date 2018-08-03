@@ -29,26 +29,46 @@ install_omzsh() {
    check_for_err "Setting zsh as default" 
 }
 
+setup_vim() {
+  # Clone the colors repo
+  rm -fdr ~/.vim-colors-solarized
+  git clone --quiet https://github.com/altercation/vim-colors-solarized.git ~/.vim-colors-solarized >/dev/null
+  check_for_err "Cloning solarized repo"
+  mkdir -p ~/.vim/colors
+  check_for_err "Making the vim folders"
+  mv ~/.vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
+  check_for_err "Copying the vim color config"
+  cp ./.vimrc ~/.vimrc
+  echo "vim setup complete"
+}
+
 setup_git() {
    echo " "
    echo "Is this a personal or work setup? (p or w}"
    read answer
-   #if [ "$answer" == "p" ]; then
-   #    echo "Setting up personal git"
-   #    git config --global user.name "Quinn Damerell"
-   #    git config --global user.email quinnd@outlook.com
-   #else 
-       echo "Setting up work git"
+   if [ "$answer" = "p" ]; then
+       echo "Setting up personal git"
+       git config --global user.name "Quinn Damerell"
+       git config --global user.email quinnd@outlook.com
+   else 
+       echo "Setting git for work..."
        git config --global user.name "Quinn Damerell"
        git config --global user.email qdamere@microsoft.com
-   #fi
+   fi
 }
 
+echo " "
+echo " "
 echo "********************"
 echo "  Q Setup Script!"
 echo "********************"
 setup_git;
+chmod +x ./update.sh
+chmod +x ./write.sh
 
+
+echo " "
+echo " "
 echo "********************"
 echo "    Installing"
 echo "********************"
@@ -56,15 +76,21 @@ echo "********************"
 install_omzsh;
 install_program "tmux";
 
+echo " "
+echo " "
 echo "********************"
 echo "    Copy Configs"
 echo "********************"
 
 cp ./.tmux.conf ~/.tmux.conf
 cp ./.zshrc ~/.zshrc
+cp ./.bashrc ~/.bashrc
+setup_vim;
 
 
+echo " "
+echo "************************"
+echo " Done! Starting zsh..."
+echo "************************"
 
-
-echo "Starting zsh!"
 zsh -l
