@@ -43,16 +43,16 @@ setup_vim() {
 }
 
 setup_git() {
+   git config --global push.default simple
+   git config --global user.name "Quinn Damerell"   
    echo " "
    echo "Is this a personal or work setup? (p or w}"
    read answer
    if [ "$answer" = "p" ]; then
        echo "Setting up personal git"
-       git config --global user.name "Quinn Damerell"
        git config --global user.email quinnd@outlook.com
    else 
        echo "Setting git for work..."
-       git config --global user.name "Quinn Damerell"
        git config --global user.email qdamere@microsoft.com
    fi
 }

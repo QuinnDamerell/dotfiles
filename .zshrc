@@ -103,8 +103,8 @@ cd ~
 ## Directories
 alias dr='cd ~/repos'
 alias dotf='cd ~/repos/dotfiles'
-alias dotf-pull='~/repos/dotfiles/update.sh'
-alias dotf-push='~/repos/dotfiles/write.sh'
+alias dotfpull='~/repos/dotfiles/update.sh'
+alias dotfpush='~/repos/dotfiles/write.sh'
 
 ## Tmux stuff.
 alias tm='tmux a -t quinn'
