@@ -91,6 +91,7 @@ fi
 
 ### Mixer Stuff
 alias probot='sudo /etc/probot/Probot'
+alias vsts='/home/qdamere/lib/vsts-cli/bin/vsts'
 
 alias an='ssh qdamere@ansible -t "sudo -su ansible; zsh -l"'
 alias rac='ssh -oForwardAgent=yes qdamere@raccoons.mixer.com'
