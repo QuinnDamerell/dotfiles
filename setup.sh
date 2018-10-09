@@ -96,6 +96,8 @@ cp ./.tmux.conf ~/.tmux.conf
 cp ./.zshrc ~/.zshrc
 cp ./.bashrc ~/.bashrc
 cp ./ssh_config ~/.ssh/config
+chmod 600 ~/.ssh/config
+chown $USER ~/.ssh/config
 setup_vim;
 
 
