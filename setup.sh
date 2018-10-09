@@ -95,6 +95,7 @@ echo "********************"
 cp ./.tmux.conf ~/.tmux.conf
 cp ./.zshrc ~/.zshrc
 cp ./.bashrc ~/.bashrc
+cp ./ssh_config ~/.ssh/config
 setup_vim;
 
 
