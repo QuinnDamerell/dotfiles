@@ -97,6 +97,8 @@ alias rac='ssh -oForwardAgent=yes qdamere@raccoons.mixer.com'
 
 ## Personal Stuff
 
+alias qc='ssh quinn@quinncloud.quinndamerell.com'
+
 ## ET go home
 cd ~
 
