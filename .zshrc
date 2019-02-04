@@ -92,7 +92,7 @@ fi
 ### Mixer Stuff
 alias probot='sudo /etc/probot/Probot'
 
-alias an='ssh qdamere@ansible -t "sudo -su ansible; zsh -l"'
+alias an='ssh qdamere@ansible -t "sudo -su ansible; zsh -l; exit"'
 alias rac='ssh -oForwardAgent=yes qdamere@raccoons.mixer.com'
 
 ## Personal Stuff
@@ -120,12 +120,6 @@ dotf-status () {
 alias tm='tmux a -t quinn'
 alias tmn='tmux -2 new -s quinn'
 alias tmk='tmux kill-session -t quinn'
-
-## Other
-# Find large files
-du-lf () {
-   sudo du -a / | sort -n -r | head -n 20
-}
 
 ## JournalCtl Helpers
 jc () {
@@ -163,4 +157,16 @@ root () {
 
 outputp () {
    sudo strace -ewrite -p $1
+}
+
+# Find large files
+du-lf () {
+    sudo du -a / | sort -n -r | head -n 20
+}
+
+push-profile () {
+    echo "Writing file to ansible"
+    scp .zshrc ansible:/tmp/.zshrc.quinn
+    echo "Pushing out config"
+    ssh qdamere@ansible -t "sudo su ansible -c 'cd /home/ansible/infra-mixer; ansible -i inventory/metal-hosts dists-ring-all,ingests-ring-all,video-etcd -m copy -a \"src=/tmp/.zshrc.quinn dest=/home/qdamere/.zshrc\"'"    
 }
