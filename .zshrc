@@ -121,6 +121,12 @@ alias tm='tmux a -t quinn'
 alias tmn='tmux -2 new -s quinn'
 alias tmk='tmux kill-session -t quinn'
 
+## Other
+# Find large files
+du-lf () {
+   sudo du -a / | sort -n -r | head -n 20
+}
+
 ## JournalCtl Helpers
 jc () {
    sudo journalctl -u $1 -f
