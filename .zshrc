@@ -1,5 +1,11 @@
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+hostname=`cat /proc/sys/kernel/hostname`
+echo $hostname
+if [[ $hostname =~ .*mixer.* ]]; then
+    export ZSH=/etc/oh-my-zsh
+else
+    export ZSH=~/.oh-my-zsh
+fi
 
 # Set name of the theme to load.
 # Look in /etc/oh-my-zsh/themes/
