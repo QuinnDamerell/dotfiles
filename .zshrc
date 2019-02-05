@@ -156,6 +156,15 @@ sc-st () {
    sudo systemctl stop $1
 }
 
+## Mixer
+janus-da () {
+   curl --silent 'localhost:8098/disable?announce' | jq
+}
+
+janus-en () {
+   curl --silent 'localhost:8098/enable?announce' | jq
+}
+
 ## Other
 root () {
    sudo su root
