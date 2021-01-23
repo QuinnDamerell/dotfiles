@@ -95,15 +95,10 @@ if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
 
-### Mixer Stuff
-alias probot='sudo /etc/probot/Probot'
-
-alias an='ssh qdamere@ansible -t "sudo -su ansible; zsh -l; exit"'
-alias rac='ssh -oForwardAgent=yes qdamere@raccoons.mixer.com'
+#alias rac='ssh -oForwardAgent=yes qdamere@raccoons.mixer.com'
 
 ## Personal Stuff
-
-alias qc='ssh quinn@quinncloud.quinndamerell.com'
+alias c='ssh -i ~/.ssh/octokey.pem quinn@40.122.145.252'
 
 ## ET go home
 cd ~
@@ -156,15 +151,6 @@ sc-st () {
    sudo systemctl stop $1
 }
 
-## Mixer
-janus-da () {
-   curl --silent 'localhost:8098/disable?announce' | jq
-}
-
-janus-en () {
-   curl --silent 'localhost:8098/enable?announce' | jq
-}
-
 ## Other
 root () {
    sudo su root
@@ -177,11 +163,4 @@ outputp () {
 # Find large files
 du-lf () {
     sudo du -a / | sort -n -r | head -n 20
-}
-
-push-profile () {
-    echo "Writing file to ansible"
-    scp .zshrc ansible:/tmp/.zshrc.quinn
-    echo "Pushing out config"
-    ssh qdamere@ansible -t "sudo su ansible -c 'cd /home/ansible/infra-mixer; ansible -i inventory/metal-hosts dists-ring-all,ingests-ring-all,video-etcd -m copy -a \"src=/tmp/.zshrc.quinn dest=/home/qdamere/.zshrc\"'"    
 }
