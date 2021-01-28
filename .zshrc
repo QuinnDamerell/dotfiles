@@ -98,7 +98,8 @@ fi
 #alias rac='ssh -oForwardAgent=yes qdamere@raccoons.mixer.com'
 
 ## Personal Stuff
-alias c='ssh -i ~/.ssh/octokey.pem quinn@40.122.145.252'
+alias c-na='ssh -i ~/.ssh/octokey.pem quinn@168.61.223.157'
+alias c-eu='ssh -i ~/.ssh/octokey.pem quinn@104.40.246.32'
 
 ## ET go home
 cd ~
