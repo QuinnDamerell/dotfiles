@@ -103,7 +103,7 @@ alias c-eu='ssh -i ~/.ssh/octokey.pem quinn@104.40.246.32'
 
 alias c-naw='ssh -i ~/.ssh/octokey.pem quinn@143.110.227.92'
 alias c-nae='ssh -i ~/.ssh/octokey.pem quinn@161.35.138.174'
-alias c-euw='ssh -i ~/.ssh/octokey.pem quinn@'
+alias c-euw='ssh -i ~/.ssh/octokey.pem quinn@139.59.151.85'
 
 ## ET go home
 cd ~
