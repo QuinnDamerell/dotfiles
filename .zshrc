@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 hostname=`cat /proc/sys/kernel/hostname`
-echo $hostname
+echo "Welcome Quinn - $hostname"
 if [[ $hostname =~ .*mixer.* ]]; then
     export ZSH=/etc/oh-my-zsh
 else
