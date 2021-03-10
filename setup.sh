@@ -31,7 +31,14 @@ install_omzsh() {
    check_for_err "Removing zsh repo"
    git clone --quiet https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh >/dev/null   
    check_for_err "Cloning omzsh"
-  
+   git clone --quiet  https://github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search >/dev/null 
+   check_for_err "Cloning zsh history search"
+   git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting >/dev/null
+   check_for_err "Cloning zsh syntax highligh"
+   git clone --quiet https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions >/dev/null
+   check_for_err "Cloning zsh auto suggest"
+
+
    TEST_CURRENT_SHELL=$(expr "$SHELL" : '.*/\(.*\)')
    if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then   
       chsh -s /bin/zsh

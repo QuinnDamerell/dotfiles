@@ -67,6 +67,15 @@ plugins=(git systemd tmux)
 
 source $ZSH/oh-my-zsh.sh
 
+# Enable the syntax highlihg plugin
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Enable the history auto complete plugin
+source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
