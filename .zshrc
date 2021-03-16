@@ -176,3 +176,11 @@ outputp () {
 du-lf () {
     sudo du -a / | sort -n -r | head -n 20
 }
+
+# Try to launch dockerd if it's not running
+RUNNING=`ps aux | grep dockerd | grep -v grep`
+if [ -z "$RUNNING" ]; then
+    echo "dockerd not running, trying to start"
+    sudo dockerd > /dev/null 2>&1 &
+    disown
+fi
