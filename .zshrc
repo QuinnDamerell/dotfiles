@@ -111,7 +111,7 @@ alias c-naw='ssh -i ~/.ssh/octokey.pem quinn@143.110.227.92'
 alias c-nae='ssh -i ~/.ssh/octokey.pem quinn@161.35.138.174'
 alias c-euw='ssh -i ~/.ssh/octokey.pem quinn@139.59.151.85'
 alias c-ase='ssh -i ~/.ssh/octokey.pem quinn@157.230.36.67'
-alias c-lab='ssh -i ~/.ssh/octokey.pem quinn@157.245.209.112'
+alias c-lab='ssh -i ~/.ssh/octokey.pem quinn@143.110.144.83'
 
 ## ET go home
 cd ~
