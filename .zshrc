@@ -119,6 +119,7 @@ alias c-sgp='ssh -i ~/.ssh/octokey.pem quinn@139.59.224.50'
 alias c-sfo='ssh -i ~/.ssh/octokey.pem quinn@161.35.239.231'
 alias c-fra='ssh -i ~/.ssh/octokey.pem quinn@165.227.157.16'
 alias c-nyc='ssh -i ~/.ssh/octokey.pem quinn@165.22.39.243'
+alias c-tor='ssh -i ~/.ssh/octokey.pem quinn@142.93.152.110'
 
 
 ## ET go home
