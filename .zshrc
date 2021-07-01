@@ -113,6 +113,7 @@ alias c-euw='ssh -i ~/.ssh/octokey.pem quinn@139.59.151.85'
 alias c-ase='ssh -i ~/.ssh/octokey.pem quinn@157.230.36.67'
 alias c-lab='ssh -i ~/.ssh/octokey.pem quinn@143.110.144.83'
 
+alias c-blr='ssh -i ~/.ssh/octokey.pem quinn@134.209.148.71'
 alias c-lon='ssh -i ~/.ssh/octokey.pem quinn@178.62.66.157'
 alias c-sgp='ssh -i ~/.ssh/octokey.pem quinn@139.59.224.50'
 alias c-sfo='ssh -i ~/.ssh/octokey.pem quinn@161.35.239.231'
